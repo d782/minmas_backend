@@ -15,7 +15,7 @@ export class Buys{
     @Column()
     quantity: number;
 
-    @OneToOne(type=>Products)
+    @ManyToOne(type=>Products,{onDelete:"CASCADE"})
     @JoinColumn({name:"product_id"})
     product_id: Products;
 
