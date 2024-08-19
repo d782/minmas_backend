@@ -30,4 +30,9 @@ export class UsersController {
     async DeleteData(@Body() query:any){
         return this.userSvc.removeUser(query)
     }
+
+    @Post('login')
+    async Login(@Body() query){
+        return this.userSvc.Login(query);
+    }
 }
