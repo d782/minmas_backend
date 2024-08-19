@@ -8,7 +8,7 @@ export class Buys{
     @PrimaryGeneratedColumn()
     buy_id: number;
 
-    @ManyToOne(type=>Invoices)
+    @ManyToOne(type=>Invoices,{onDelete:"CASCADE"})
     @JoinColumn({name:"factura_id"})
     factura_id: Invoices;
 

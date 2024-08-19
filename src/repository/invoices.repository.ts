@@ -1,4 +1,4 @@
-import {Column,PrimaryGeneratedColumn,Entity, OneToOne, JoinColumn} from 'typeorm';
+import {Column,PrimaryGeneratedColumn,Entity, JoinColumn, ManyToOne} from 'typeorm';
 import { Customers } from './customers.repository';
 
 @Entity()
@@ -9,7 +9,7 @@ export class Invoices {
     @Column()
     total: number;
 
-    @OneToOne(type=>Customers,{onDelete:"CASCADE"})
+    @ManyToOne(type=>Customers,{onDelete:"CASCADE"})
     @JoinColumn({name:"customer_id"})
     customer_id: Customers;
 
