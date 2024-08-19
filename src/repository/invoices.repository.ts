@@ -9,7 +9,7 @@ export class Invoices {
     @Column()
     total: number;
 
-    @OneToOne(type=>Customers)
+    @OneToOne(type=>Customers,{onDelete:"CASCADE"})
     @JoinColumn({name:"customer_id"})
     customer_id: Customers;
 
