@@ -23,6 +23,31 @@ import { Contact } from './repository/contact.repository';
     UsersModule,
     TypeOrmModule.forRoot({
       type:"mysql",
+      host:"mysql-1c26523f-diegocano66-7e81.d.aivencloud.com",
+      port:27768,
+      username:'avnadmin',
+      password:'AVNS_u2CmjCgSQVKpXOz50ef',
+      synchronize:true,
+      retryAttempts:10,
+      entities:[
+        Users,
+        Buys,
+        Customers,
+        Invoices,
+        Products,
+        Contact
+      ],
+      database:'defaultdb'
+    })
+  ],
+  controllers: [AppController],
+  providers: [AppService],
+})
+export class AppModule {}
+
+//localhost database configuration
+/*
+      type:"mysql",
       host:"localhost",
       port:3306,
       username:'root',
@@ -38,9 +63,4 @@ import { Contact } from './repository/contact.repository';
         Contact
       ],
       database:'el_puerto'
-    })
-  ],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
+*/
