@@ -1,4 +1,4 @@
-import {Entity,Column,PrimaryGeneratedColumn, OneToOne, JoinColumn, ManyToOne} from 'typeorm';
+import {Entity,Column,PrimaryGeneratedColumn, JoinColumn, ManyToOne} from 'typeorm';
 import { Products } from './products.repository';
 import { Invoices } from './invoices.repository';
 

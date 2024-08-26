@@ -1,6 +1,7 @@
 import { Body, Controller, Delete, Patch, Post } from '@nestjs/common';
 import { Users } from '../../repository/users.repository';
 import { UsersService } from './users.service';
+import { Contact } from '../../repository/contact.repository';
 
 @Controller('users')
 export class UsersController {
@@ -34,5 +35,10 @@ export class UsersController {
     @Post('login')
     async Login(@Body() query){
         return this.userSvc.Login(query);
+    }
+
+    @Post('contact')
+    async Contact(@Body() contact:Contact){
+        return this.userSvc.ContactInfo(contact)
     }
 }

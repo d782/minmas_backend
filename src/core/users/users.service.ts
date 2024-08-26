@@ -4,6 +4,7 @@ import { Users } from '../../repository/users.repository';
 import { FindManyOptions, Repository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import { Contact } from '../../repository/contact.repository';
 
 @Injectable()
 export class UsersService {
@@ -11,6 +12,7 @@ export class UsersService {
     passHash="moscow";
     constructor(
         @InjectRepository(Users) private userRepository: Repository<Users>,
+        @InjectRepository(Contact) private contactRepository: Repository<Contact>,
         private jwtService:JwtService
     ){
 
@@ -89,6 +91,14 @@ export class UsersService {
             return {
                 token:sign
             }
+        } catch (error) {
+            throw new HttpException({data:error},HttpStatus.INTERNAL_SERVER_ERROR) 
+        }
+    }
+
+    async ContactInfo(contact:Contact){
+        try {
+            return await this.contactRepository.save(contact) 
         } catch (error) {
             throw new HttpException({data:error},HttpStatus.INTERNAL_SERVER_ERROR) 
         }

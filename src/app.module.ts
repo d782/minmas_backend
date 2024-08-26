@@ -12,6 +12,7 @@ import { Buys } from './repository/buys.repository';
 import { Customers } from './repository/customers.repository';
 import { Invoices } from './repository/invoices.repository';
 import { Products } from './repository/products.repository';
+import { Contact } from './repository/contact.repository';
 
 @Module({
   imports: [
@@ -33,7 +34,8 @@ import { Products } from './repository/products.repository';
         Buys,
         Customers,
         Invoices,
-        Products
+        Products,
+        Contact
       ],
       database:'el_puerto'
     })

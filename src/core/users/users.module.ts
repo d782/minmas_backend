@@ -4,11 +4,15 @@ import { UsersController } from './users.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Users } from '../../repository/users.repository';
 import { JwtModule } from '@nestjs/jwt';
+import { Contact } from '../../repository/contact.repository';
 
 @Module({
   imports:[
     TypeOrmModule.forFeature(
-      [Users]
+      [
+        Users,
+        Contact
+      ]
     ),
     JwtModule.register({
       secret:"moscow",
