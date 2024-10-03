@@ -47,20 +47,8 @@ export class AppModule {}
 
 //localhost database configuration
 /*
-      type:"mysql",
       host:"localhost",
       port:3306,
-      username:'root',
-      password:'admin',
-      synchronize:true,
-      retryAttempts:10,
-      entities:[
-        Users,
-        Buys,
-        Customers,
-        Invoices,
-        Products,
-        Contact
-      ],
-      database:'el_puerto'
+      username:'dbeaver',
+      password:'dbeaver',
 */

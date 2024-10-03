@@ -1,5 +1,5 @@
 export interface IUsers{
-    user_id:number,
+    user_id?:number,
     rol:number,
     pwd:string,
     phone:string,
